@@ -24,12 +24,14 @@ const GameGrid = ({ selectedGenre }: Props) => {
         {isLoading &&
           skeletons.map((skeleton) => (
             <GameCardContainer
-              childrend={<GameCardSkeleton key={skeleton} />}
+              key={skeleton}
+              childrend={<GameCardSkeleton />}
             ></GameCardContainer>
           ))}
         {data.map((game) => (
           <GameCardContainer
-            childrend={<GameCard key={game.id} game={game} />}
+            key={game.id}
+            childrend={<GameCard game={game} />}
           ></GameCardContainer>
         ))}
       </SimpleGrid>
